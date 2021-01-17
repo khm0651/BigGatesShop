@@ -1,9 +1,12 @@
 import React from 'react'
+import Link from "next/link";
+import {Button} from "antd";
 
 const Home = () =>{
     return(
         <div>
-            쇼핑몰 프로젝트
+            <Link href='/Mypage'><a><Button> 마이 프로필 </Button></a></Link>
+
         </div>
     )
 }
