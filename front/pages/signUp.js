@@ -15,8 +15,10 @@ const SignUp = () => {
             <link rel ="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css" />
             <script src ="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.js" />
         </Head>
-        <div>회원가입 페이지</div>
-        <Form>
+
+        <Form style={{margin:10}}>
+            <div>회원가입 페이지</div>
+            <br/>
             <div>
                 <label htmlFor="user-id">ID</label>
                 <br />
@@ -53,9 +55,9 @@ const SignUp = () => {
                 <label htmlFor="user-address">주소</label>
                 <br />
                 <Input name = "user-addressNumber" style={{width:'150px'}} />
-                <Button type="primary" htmlType="submit" href='./findAddress'>우편번호 찾기</Button>
+                <Button style={{marginLeft:5}} type="primary" htmlType="submit" href='./findAddress'>우편번호 찾기</Button>
                 <br/>
-                <Input name = "user-address1"/>
+                <Input style={{marginTop:5, marginBottom:5}} name = "user-address1"/>
                 <br/>
                 <Input name = "user-address2"/>
             </div>
@@ -66,11 +68,11 @@ const SignUp = () => {
             </div>
 
             <div>
-                <Checkbox name="user-term" >
+                <Checkbox name="user-term" style={{marginTop:5}}>
                     이용약관 및 개인정보 수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</Checkbox>
             </div>
             <div>
-                <Button type="primary" htmlType="submit">회원가입</Button>
+                <Button type="primary" htmlType="submit" style={{marginTop:5}}>회원가입</Button>
             </div>
         </Form>
     </>
