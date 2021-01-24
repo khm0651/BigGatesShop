@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import TopBanner from '../components/bannerComponents/TopBanner'
+import BottomBanner from '../components/bottomBannerComponents/BottomBanner'
 
 const BigGatesShop = ({ Component }) => {
     return (
@@ -14,6 +15,7 @@ const BigGatesShop = ({ Component }) => {
             <div style={appLayoutWrapper}>
                 <Component />
             </div>
+            <BottomBanner />
    
         </>
     )
