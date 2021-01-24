@@ -16,7 +16,7 @@ const SignUp = () => {
             <script src ="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.js" />
         </Head>
 
-        <Form style={{margin:10}}>
+        <Form onSubmit={onSubmitForm} style={{margin:10}}>
             <div>회원가입 페이지</div>
             <br/>
             <div>
