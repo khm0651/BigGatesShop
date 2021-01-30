@@ -69,21 +69,21 @@ const Carousel = ({title,img}) => {
 
             <CurrentButtonWrapper>
 
-                { index == 0 ? <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton0`} onClick={()=>moveIndex(0)} background = "#ECECEC"/>
-                : <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton0`} onClick={()=>moveIndex(0)}/>}
+                { index == 0 ? <CurrentButton id={`${title.replace(" ","")}CurrentButton0`} onClick={()=>moveIndex(0)} background = "#ECECEC"/>
+                : <CurrentButton id={`${title.replace(" ","")}CurrentButton0`} onClick={()=>moveIndex(0)}/>}
                 
 
-                { index == 1 ? <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton1`} onClick={()=>moveIndex(1)} background = "#ECECEC"/>
-                : <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton1`} onClick={()=>moveIndex(1)}/>}
+                { index == 1 ? <CurrentButton id={`${title.replace(" ","")}CurrentButton1`} onClick={()=>moveIndex(1)} background = "#ECECEC"/>
+                : <CurrentButton id={`${title.replace(" ","")}CurrentButton1`} onClick={()=>moveIndex(1)}/>}
 
-                { index == 2 ? <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton2`} onClick={()=>moveIndex(2)} background = "#ECECEC"/>
-                : <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton2`} onClick={()=>moveIndex(2)}/>}
+                { index == 2 ? <CurrentButton id={`${title.replace(" ","")}CurrentButton2`} onClick={()=>moveIndex(2)} background = "#ECECEC"/>
+                : <CurrentButton id={`${title.replace(" ","")}CurrentButton2`} onClick={()=>moveIndex(2)}/>}
 
-                { index == 3 ? <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton3`} onClick={()=>moveIndex(3)} background = "#ECECEC"/>
-                : <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton3`} onClick={()=>moveIndex(3)}/>}
+                { index == 3 ? <CurrentButton id={`${title.replace(" ","")}CurrentButton3`} onClick={()=>moveIndex(3)} background = "#ECECEC"/>
+                : <CurrentButton id={`${title.replace(" ","")}CurrentButton3`} onClick={()=>moveIndex(3)}/>}
 
-                { index == 4 ? <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton4`} onClick={()=>moveIndex(4)} background = "#ECECEC"/>
-                : <CurrentButton id={`${title.replaceAll(" ","")}CurrentButton4`} onClick={()=>moveIndex(4)}/>}
+                { index == 4 ? <CurrentButton id={`${title.replace(" ","")}CurrentButton4`} onClick={()=>moveIndex(4)} background = "#ECECEC"/>
+                : <CurrentButton id={`${title.replace(" ","")}CurrentButton4`} onClick={()=>moveIndex(4)}/>}
 
             </CurrentButtonWrapper>
         </Wrapper>
