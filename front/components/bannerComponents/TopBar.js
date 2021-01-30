@@ -18,7 +18,8 @@ const TopBar = () => {
                 회원가입
                 </Menu.Item>
             <Menu.Item key="shoppingList">
-                장바구니
+                <Link href="/Basket"><a>장바구니</a></Link>
+
                 </Menu.Item>
             <Menu.Item key="QnA">
                 Q&A
