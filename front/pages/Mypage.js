@@ -10,8 +10,8 @@ export const dummyUser ={
     money : '999,999',
     point : '999,999',
     coupone : '2',
-
 }
+
 
 
 const Mypage=()=>{
