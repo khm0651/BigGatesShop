@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ProductImg from './ProductImg'
 
-const TGLPick = () =>{
+const TGLPick = ({img}) =>{
     return(
         <TGLWrapper>
             <TGLTitle>
@@ -10,10 +10,9 @@ const TGLPick = () =>{
             </TGLTitle>
 
             <TGLImgWrapper>
-                <ProductImg src={"hi"}/>
-                <ProductImg />
-                <ProductImg />
-                <ProductImg />
+                {img.map((v,i)=>{
+                    return <ProductImg key = {i} src={v.src}/>
+                })}
             </TGLImgWrapper>
         </TGLWrapper>
         
