@@ -1,6 +1,7 @@
 import React from 'react'
 import {Menu} from 'antd'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const TopBar = () => {
     return(
@@ -12,7 +13,7 @@ const TopBar = () => {
                 로그인
                 </Menu.Item>
             <Menu.Item key="signUp" >
-                회원가입
+                <Link href="/signUp"><a>회원가입</a></Link>
                 </Menu.Item>
             <Menu.Item key="shoppingList">
                 장바구니
