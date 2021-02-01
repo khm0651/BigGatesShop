@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, Input } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
-import DaumPostcode from 'react-daum-postcode';
+// import DaumPostcode from 'react-daum-postcode';
 
 const FindAddr = () => {
 

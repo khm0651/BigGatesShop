@@ -35,19 +35,19 @@ const SignUpSuccess = () => {
 
             <br/>
             <Card title="The Glitters Lab에 오신걸 환영합니다♥" style={style1}>
-                <Row>
+                <Row style={{display : "flex", flexDirection : "row"}}>
                     <Col md={5}>
                         <img src={instargramLogo} style={{width: "100px",}}/>
                     </Col>
                     <Col md={7} style={{marginLeft: 5}}>
                         <Row>
-                            <div><b>ID: </b></div><div>{dummy.id}</div>
+                            <div><b>ID: </b>{dummy.id}</div>
                         </Row>
                         <Row>
-                            <div><b>이름: </b></div><div>{dummy.name}</div>
+                            <div><b>이름: </b>{dummy.name}</div>
                         </Row>
                         <Row>
-                            <div><b>이메일: </b></div><div>{dummy.email}</div>
+                            <div><b>이메일: </b>{dummy.email}</div>
                         </Row>
                     </Col>
                 </Row>

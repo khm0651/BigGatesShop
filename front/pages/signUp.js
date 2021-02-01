@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Form, Input, Checkbox, Button, Select } from "antd";
 import {useDispatch, useSelector} from "react-redux";
-import DaumPostcode from 'react-daum-postcode';
+// import DaumPostcode from 'react-daum-postcode';
 
 const {Option} = Select;
 
@@ -155,7 +155,7 @@ const SignUp = () => {
                 <Input name = "user-postcode" value={postcode} required onChange={onChangePostCode} style={{width:'150px', background:"#fff"}} disabled={true}/>
                 <Button style={{marginLeft:5}} type="primary" htmlType="submit" href='./findAddress' >우편번호 찾기</Button>
                 <br/>
-                <Input style={{marginTop:5, marginBottom:5}} name = "user-address1" value={useraddress1} required onChange={onChangeAddress1} disabled={true}/>
+                <Input style={{marginTop:5, marginBottom:5, background:"#fff"}} name = "user-address1" value={useraddress1} required onChange={onChangeAddress1} disabled={true}/>
                 <br/>
                 <Input name = "user-address2" value={useraddress2} onChange={onChangeAddress2} />
             </div>
