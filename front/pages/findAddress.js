@@ -31,7 +31,7 @@ const FindAddressNumber = () => {
             <div>
                 <label htmlFor="address-si_name">주소검색</label>
                 <br />
-                <Input name = "address-si_name" placeholder = "도로명주소+건물번호/건물명 혹은 지번주소+번지수/건물명 입력해주세요." style={{width:600, marginRight:10}}/>
+                <Input name = "address-si_name" placeholder = "도로명주소+건물번호/건물명 혹은 지번주소+번지수/건물명 입력해주세요." style={{width:600, marginRight:10}} />
                 <Button type="primary" icon={<SearchOutlined />}>
                     Search
 

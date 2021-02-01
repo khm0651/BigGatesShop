@@ -27,6 +27,10 @@ const SignUp = () => {
     const[term,setTerm] = useState(false);
     const[passwordError, setPasswordError] = useState('');
     const[termError, setTermError] = useState(false);
+    const [postcode, setPostCode] = useState('');
+    const [useraddress1, setAddress1] = useState('');
+    const [useraddress2, setAddress2] = useState('');
+    const [useremail, setUserEmail] = useState('');
 
     const onSubmit =useCallback((e)=>{
         e.preventDefault();
@@ -48,6 +52,22 @@ const SignUp = () => {
 
     const onChangePassword=(e)=>{
         setPassword(e.target.value);
+    };
+
+    const onChangePostCode= (e) => {
+        setPostCode(e.target.value);
+    };
+
+    const onChangeAddress1 = (e) => {
+        setAddress1(e.target.value);
+    };
+
+    const onChangeAddress2 = (e) => {
+        setAddress2(e.target.value);
+    };
+
+    const onChangeUserEmail = (e) => {
+        setUserEmail(e.target.value);
     };
 
     const onChangePasswordCheck=useCallback((e)=>{
@@ -120,6 +140,9 @@ const SignUp = () => {
                 <Select defaultValue="010" style={{ width: 150, marginRight:10 }} onChange={handleChange}>
                     <Option value="010">010</Option>
                     <Option value="011">011</Option>
+                    <Option value="02">02</Option>
+                    <Option value="031">031</Option>
+                    <Option value="041">041</Option>
                 </Select> -
                 <Input name="user-tel1" style={{width:150, margin:10}}/>
                 -
@@ -129,17 +152,17 @@ const SignUp = () => {
             <div>
                 <label htmlFor="user-address">주소</label>
                 <br />
-                <Input name = "user-addressNumber"  style={{width:'150px'}} />
-                <Button style={{marginLeft:5}} type="primary" htmlType="submit" href='./findAddress'>우편번호 찾기</Button>
+                <Input name = "user-postcode" value={postcode} required onChange={onChangePostCode} style={{width:'150px', background:"#fff"}} disabled={true}/>
+                <Button style={{marginLeft:5}} type="primary" htmlType="submit" href='./findAddress' >우편번호 찾기</Button>
                 <br/>
-                <Input style={{marginTop:5, marginBottom:5}} name = "user-address1"/>
+                <Input style={{marginTop:5, marginBottom:5}} name = "user-address1" value={useraddress1} required onChange={onChangeAddress1} disabled={true}/>
                 <br/>
-                <Input name = "user-address2"/>
+                <Input name = "user-address2" value={useraddress2} onChange={onChangeAddress2} />
             </div>
             <div>
                 <label htmlFor="user-email">E-mail</label>
                 <br/>
-                <Input name = "user-email"/>
+                <Input name = "user-email" value={useremail} required onChange={onChangeUserEmail}/>
             </div>
 
             <div>

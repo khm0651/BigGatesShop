@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, Form, Input, Button, List, Col, Row,} from "antd";
+import instargramLogo from "../img/instargram.png";
 
 const dummy = {
     id: 'nanisister',
@@ -7,12 +8,18 @@ const dummy = {
     email: 'nanisister@naver.com'
 }
 const style1 = {
-
-    borderRadius: "20px 20px 20px 20px",
+    borderRadius: "20px",
     height: "200px",
-    width: "420px",
-    paddingLeft: "10px",
+    width: "700px",
+    marginLeft: "150px"
 };
+
+const img1 = {
+    width: "200px",
+    height: "200px",
+    marginBottom: "10px",
+
+}
 
 const SignUpSuccess = () => {
     return <>
@@ -20,25 +27,33 @@ const SignUpSuccess = () => {
         <br/><br/>
 
         <br/><br/>
-        <div style={{marginLeft:200}}>
-            <div></div>
-            <div><b>회원가입이 완료되었습니다.</b></div>
+        <div style={{marginLeft: "500px"}}>
+            <div style={{marginLeft: "350px"}}>
+                <div><img src={instargramLogo} style={img1}/></div>
+                <div style={{fontSize: "20px"}}><b>회원가입이 완료되었습니다.</b></div>
+            </div>
+
             <br/>
             <Card title="The Glitters Lab에 오신걸 환영합니다♥" style={style1}>
                 <Row>
-                    <Col md={4}>
-                        image
+                    <Col md={5}>
+                        <img src={instargramLogo} style={{width: "100px",}}/>
                     </Col>
-                    <Col md={8}>
-                        <p>ID: </p>
-                        <p>이름: </p>
-                        <p>이메일: </p>
+                    <Col md={7} style={{marginLeft: 5}}>
+                        <Row>
+                            <div><b>ID: </b></div><div>{dummy.id}</div>
+                        </Row>
+                        <Row>
+                            <div><b>이름: </b></div><div>{dummy.name}</div>
+                        </Row>
+                        <Row>
+                            <div><b>이메일: </b></div><div>{dummy.email}</div>
+                        </Row>
                     </Col>
                 </Row>
-
-
             </Card>
-            <Button color='#6d0aef' style={{marginTop: 10}} href='./index'>완료</Button>
+            <br/><br/><br/>
+            <Button style={{marginTop: 10, marginLeft: "410px", background: "#bd00f3"}} href='./index'><b>완료</b></Button>
 
         </div>
     </>
