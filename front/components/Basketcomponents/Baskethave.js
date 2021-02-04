@@ -1,9 +1,11 @@
 import React from "react";
-import {Row, Col,  Checkbox, Divider, Button } from "antd";
+import {Row, Col, Checkbox, Divider, Button, Menu} from "antd";
 // import TGLPick from "../IndexComponents/TglPick";
 import imgfile1 from '../../img/book1.png';
 import imgfile2 from '../../img/book2.png';
 import imgfile3 from '../../img/book3.png';
+import Link from "next/link";
+
 
 const Basketdummy ={
     basketpoint : 999999,
@@ -135,10 +137,11 @@ const Baskethave =()=>{
             </div>
             <div style = {ff}>
 
-                <Col md={2}><Button> 쇼핑 계속하기</Button></Col>
-                <Col md={14}style ={{marginRight:"26px"}}></Col>
-                <Col md={4}><Button> 선택 상품 주문</Button></Col>
-                <Col md={2}><Button> 전체 상품 주문</Button></Col>
+                <Col md={2}><Button ><Link href="/index"><a>쇼핑 계속하기</a></Link></Button></Col>
+                {/*<Link href="/index"><a></a></Link>*/}
+                <Col md={14} style ={{marginRight:"26px"}}></Col>
+                <Col md={3} style ={{marginRight:"35px"}}><Button> 선택 상품 주문</Button></Col>
+                <Col md={3} style ={{marginRight:"17px"}}><Button> 전체 상품 주문</Button></Col>
 
 
             </div>
