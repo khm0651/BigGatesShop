@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col, Checkbox, Divider, Button, Menu} from "antd";
+import {Row, Col, Checkbox, Button} from "antd";
 // import TGLPick from "../IndexComponents/TglPick";
 import imgfile1 from '../../img/book1.png';
 import imgfile2 from '../../img/book2.png';
@@ -136,15 +136,20 @@ const Baskethave =()=>{
                 </Row>
             </div>
             <div style = {ff}>
-
-                <Col md={2}><Button ><Link href="/index"><a>쇼핑 계속하기</a></Link></Button></Col>
+                <Col><Button ><Link href="/index">쇼핑 계속하기</Link></Button></Col>
                 {/*<Link href="/index"><a></a></Link>*/}
-                <Col md={14} style ={{marginRight:"26px"}}></Col>
-                <Col md={3} style ={{marginRight:"35px"}}><Button> 선택 상품 주문</Button></Col>
-                <Col md={3} style ={{marginRight:"17px"}}><Button> 전체 상품 주문</Button></Col>
-
+                {/*<Col md={14} style ={{marginRight:"26px"}}></Col>*/}
+                <Col style ={{marginLeft: "524px", marginRight: "10px"}}><Button> 선택 상품 주문</Button></Col>
+                <Col style ={{marginRight:"17px"}}><Button> 전체 상품 주문</Button></Col>
+            </div>
+            <div style={{marginTop : "45px"}}>
+                <div style ={{fontSize:"12px" , marginBottom: "10px"}}><b> 장바구니 이용 안내</b> </div>
+                <div style={fontstyle}> 선택하신 상품의 수량을 변경하시려면 수랑 변경 후 [수정]버튼을 누르시면 됩니다.</div>
+                <div style={fontstyle}> 장바구니에 담긴 상품은 30일동안 보관됩니다. 보관된 상품은 30일 이후에 자동 삭제되오니 장바구니에서 삭제된 경우 다시 장바구니에 담아주세요.</div>
+                <div style={fontstyle}> 장바구니 왼쪽 체크버튼을 이용하여 원하시는 상품만 주문하실 수 있습니다. </div>
 
             </div>
+
         </>
     );
 };
@@ -350,7 +355,11 @@ const ff = {
     display: "flex",
     flexDirection:"row",
     width :"900px",
-    height: "50px",
+}
+
+const fontstyle = {
+    fontSize: "12px",
+    color : "darkgray",
 }
 
 export default Baskethave;
