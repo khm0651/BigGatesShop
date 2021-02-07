@@ -142,7 +142,7 @@ const Baskethave =()=>{
                 <Col style ={{marginLeft: "524px", marginRight: "10px"}}><Button> 선택 상품 주문</Button></Col>
                 <Col style ={{marginRight:"17px"}}><Button> 전체 상품 주문</Button></Col>
             </div>
-            <div style={{marginTop : "45px"}}>
+            <div style={{marginTop :"80px", marginBottom: "80px"}}>
                 <div style ={{fontSize:"12px" , marginBottom: "10px"}}><b> 장바구니 이용 안내</b> </div>
                 <div style={fontstyle}> 선택하신 상품의 수량을 변경하시려면 수랑 변경 후 [수정]버튼을 누르시면 됩니다.</div>
                 <div style={fontstyle}> 장바구니에 담긴 상품은 30일동안 보관됩니다. 보관된 상품은 30일 이후에 자동 삭제되오니 장바구니에서 삭제된 경우 다시 장바구니에 담아주세요.</div>
