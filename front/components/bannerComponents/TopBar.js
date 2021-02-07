@@ -10,7 +10,7 @@ const TopBar = () => {
                 마이페이지
                 </Menu.Item>
             <Menu.Item key="login">
-                로그인
+                <Link href="/login"><a>로그인</a></Link>
                 </Menu.Item>
             <Menu.Item key="signUp" >
                 <Link href="/signUp"><a>회원가입</a></Link>
