@@ -15,9 +15,6 @@ export const dummyUser ={
 
 
 const Mypage=()=>{
-    const orderfind =()=>{
-
-    }
 
     return(
         <>
