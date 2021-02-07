@@ -1,12 +1,19 @@
 import React from 'react';
-import {Button, Checkbox, Col, Input, Row, Select} from "antd";
+import {Button, Checkbox, Col, Input, Row, Select, Radio} from "antd";
 
 const {Option} = Select;
 
+const paymentAmountDummy={
+    // 최종결제금액 더미 값
+    productPrice:20000, //주문상품 가격
+    discountPrice:3000, //할인 및 부가결제
+    deliveryPrice:4000, //배송비
+};
+
 const cashDummy ={
-    point: "999,999",
-    deposit: "999,999",
-    coupon:"N",
+    point: "999,999", //내 보유 포인트
+    deposit: "999,999", //내 보유 예치금
+    coupon:"N", //내 보유 쿠폰
 };
 
 const orderDummy ={
@@ -23,7 +30,9 @@ const orderDummy ={
 
 const style1 = {
     borderRight: "1px solid lightgray",
-    paddingLeft: 10,
+    padding:"15px 5px 15px 20px",
+    display:"flex",
+    flexDirection:"row"
 
 };
 
@@ -37,25 +46,24 @@ const inputStyle = {
     padding:"10px 0px 10px 10px",
 };
 
-
 const Order = () => {
     return <>
         <div style={{marginLeft:300, width:"1200px"}}>
             <br/><br/>
             <div><h2>ORDER</h2></div>
             <br/>
-            <div style={{border: "1px solid lightgray ", display: "flex", flexDirection: "row", width: "1200px"}}>
+            <div style={{border: "1px solid lightgray ", display: "flex", flexDirection: "row", height:"50px"}}>
                 <Col md={3} style={style1}>
-                    <div><b>혜택정보</b></div>
+                    <div><h3><b>혜택정보</b></h3></div>
                 </Col>
                 <Col md={7} style={style1}>
-                    <div><b>가용포인트: </b>{cashDummy.point}P</div>
+                    <div style={{display:"flex", flexDirection:"row", fontSize:"15px"}}>가용포인트: <div style={{color:"#6800A8"}}>{cashDummy.point}P</div></div>
                 </Col>
                 <Col md={7} style={style1}>
-                    <div><b>예치금: </b>{cashDummy.deposit}원</div>
+                    <div>예치금: <div style={{color:"#6800A8"}}>{cashDummy.deposit}원 </div></div>
                 </Col>
                 <Col md={7} style={{paddingLeft: 5}}>
-                    <div><b>쿠폰: </b>{cashDummy.coupon}개</div>
+                    <div><h3>쿠폰: <div style={{color:"#6800A8"}}>{cashDummy.coupon}개</div> </h3></div>
                 </Col>
             </div>
             <br/>
@@ -303,12 +311,18 @@ const Order = () => {
                 <Row style={{height:"15px"}}/>
                 <Row>
                     <Col md={5} style={{paddingLeft:"5px"}}>주문상품</Col>
+                    <Col md={17}/>
+                    <Col md={2}><div style={{float:"right", marginRight:"20px"}}>{paymentAmountDummy.productPrice}원</div></Col>
                 </Row>
-                <Row>
+                <Row style={{display:"flex"}}>
                     <Col md={5} style={{paddingLeft:"5px"}}>할인 및 부가결제</Col>
+                    <Col md={17}/>
+                    <Col md={2}><div style={{float:"right", marginRight:"20px"}}>{paymentAmountDummy.discountPrice}원</div></Col>
                 </Row>
                 <Row>
                     <Col md={5} style={{paddingLeft:"5px"}} >배송비</Col>
+                    <Col md={17}/>
+                    <Col md={2}><div style={{float:"right", marginRight:"20px"}}>{paymentAmountDummy.deliveryPrice}원</div></Col>
                 </Row>
 
                 <Row style={{background:"lightgray", height:"50px", padding:"10px"}}>
@@ -317,6 +331,21 @@ const Order = () => {
                     <Col md={2} style={{display:"flex", fontSize:"18px" }}> {cashDummy.deposit} 원</Col>
                 </Row>
             </Row>
+            <Row style={{borderBottom:"1px solid black"}}>
+                <Row style={{borderBottom:"1px solid black"}}>
+                    <h3>결제 수단</h3>
+                </Row>
+                <Row style={{padding:"10px 0 10px 5px"}}>결제수단 선택</Row>
+                <Row style={{paddingBottom:"10px"}}>
+                    <Radio.Group name="groupPayment" defaultValue={"bankPayment"}>
+                        <Radio value={"bankPayment"}>무통장 입금</Radio>
+                        <Radio value={"cardPayment"}>카드 결제</Radio>
+                        <Radio value={"phonePayment"}>휴대폰 결제</Radio>
+                    </Radio.Group>
+                </Row>
+            </Row>
+            <br/>
+            <Button name="doPayment">결제하기</Button>
         </div>
 
     </>

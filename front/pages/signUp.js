@@ -80,38 +80,11 @@ const SignUp = () => {
         setTerm(e.target.checked);
     },[]);
 
-    /*const Postcode = () => {
-        const handleComplete = (data) => {
-            let fullAddress = data.address;
-            let extraAddress = '';
-
-            if (data.addressType === 'R') {
-                if (data.bname !== '') {
-                    extraAddress += data.bname;
-                }
-                if (data.buildingName !== '') {
-                    extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
-                }
-                fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
-            }
-
-            console.log(fullAddress);  // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
-        }
-
-        return (
-            <DaumPostcode
-                onComplete={handleComplete}
-                { ...props }
-            />
-        );
-    }*/
-
-
     return<>
         <Form onSubmit={ onSubmit } style={{marginLeft:500,marginRight:500}}>
 
             <br/>
-            <div>회원가입</div>
+            <h3>회원가입</h3>
             <br/>
             <div>
                 <label htmlFor="user-id">ID</label>
@@ -170,8 +143,8 @@ const SignUp = () => {
                     이용약관 및 개인정보 수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</Checkbox>
                 {termError && <div style={{ color : 'red'}}>약관에 동의하셔야합니다</div>}
             </div>
-            <div>
-                <Button type="primary" htmlType="submit" style={{marginTop:5}} href='./signUpSuccess'>회원가입</Button>
+            <div style={{marginLeft:"350px"}}>
+                <Button htmlType="submit" style={{marginTop:5, background:"#6800A8", color:"white"}} >회원가입</Button>
             </div>
         </Form>
     </>
