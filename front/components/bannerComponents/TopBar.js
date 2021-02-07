@@ -1,13 +1,16 @@
 import React from 'react'
-import {Menu} from 'antd'
+import {Button, Menu} from 'antd'
 import styled from 'styled-components'
+import Link from "next/link";
+
 
 const TopBar = () => {
     return(
         <Menu mode='horizontal' style={menu}>
             <Menu.Item key="myPage">
-                마이페이지
-                </Menu.Item>
+                <Link href='/Mypage'><a>마이 페이지</a></Link>
+            </Menu.Item>
+
             <Menu.Item key="login">
                 로그인
                 </Menu.Item>

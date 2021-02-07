@@ -46,7 +46,7 @@ const Carousel = ({title,img}) => {
             }else{
                 setIndex(index+1)
             }
-        },3000)
+        },5000)
         return () => clearInterval(timer)
         
     },[index])
@@ -111,10 +111,11 @@ const Wrapper = styled.div`
     align-items:center;
     margin-top:25px;
     flex-direction : column;
+    margin-bottom:70px;
 `
 
 const Title = styled.div`
-    font-size : 15px;
+    font-size : 18px;
     color : darkgray;
     margin-bottom:10px;
 `

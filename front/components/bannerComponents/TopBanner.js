@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import TopBar from './TopBar'
 import shopLogo from '../../img/shopLogo.png'
 import ItemCategory from './ItemCategory'
+import Link from "next/link";
 
 const TopBanner = () =>{
     return(
@@ -10,7 +11,7 @@ const TopBanner = () =>{
             <div>
                 <TopBar />
                 <BannerWrapper >
-                    <BannerImg src={shopLogo}/>
+                    <Link href="/"><a><BannerImg src={shopLogo}/></a></Link>
                 </BannerWrapper>
                 <ItemCategory />
             </div>

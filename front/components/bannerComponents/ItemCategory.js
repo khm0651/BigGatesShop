@@ -26,6 +26,9 @@ const ItemCategory = () => {
                 <Menu.Item key="event" style={eventStyle}>
                     EVENT
                 </Menu.Item>
+                <Menu.Item key="notice">
+                    NOTICE
+                </Menu.Item>
             </Menu>
     )
 }

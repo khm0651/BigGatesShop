@@ -18,7 +18,8 @@ const BottomBanner = () => {
 const BottomWrapper = styled.div`
     display:flex;
     flex-direction:row;
-
+    margin-top:90px;
+    border-top: 1px solid #ECECEC;
 `;
 
 export default BottomBanner
