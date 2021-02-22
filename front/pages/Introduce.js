@@ -1,8 +1,17 @@
 import React, {useState,useEffect,useCallback} from 'react'
 import {useRouter} from 'next/router'
-import {Divider,Form,Select} from 'antd'
+import {Divider,Form,Select,Button} from 'antd'
 import styled from 'styled-components'
 import CustomSelect from '../components/IntroduceComponents/CustomSelect'
+import product1 from '../img/product1.jpg'
+import product2 from '../img/product2.jpg'
+import product3 from '../img/product3.jpg'
+import product4 from '../img/product4.jpg'
+import product5 from '../img/product5.jpg'
+import product6 from '../img/product6.jpg'
+import product7 from '../img/product7.jpg'
+import IntroduceDetailReview from '../components/IntroduceComponents/IntroduceDetailReview'
+
 
 const TGLimg=[
     {
@@ -14,7 +23,27 @@ const TGLimg=[
             '빨강',
             '노랑',
             '검정',
+        ],
+        detail:{
+            imgs:[
+                product1,
+                product2,
+                product3,
+                product4,
+                product5,
+                product6,
+                product7,
+            ]
+        },
+        reviews:[
+            {
+                no:1,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            }
         ]
+
     },
     {
         id:2,
@@ -85,17 +114,18 @@ const Introduce = () => {
 
     console.log(count)
     return (
+        <>
         <IntroduceWrapper>
             <IntroduceImageWrapper>
                 <IntroduceImage src={item.src}/>
 
-                <IntroduceImageMoreWrapper>
+                {/* <IntroduceImageMoreWrapper>
                     <IntroduceImageMore />
                     <IntroduceImageMore />
                     <IntroduceImageMore />
                     <IntroduceImageMore />
                     <IntroduceImageMore />
-                </IntroduceImageMoreWrapper>
+                </IntroduceImageMoreWrapper> */}
                 
             </IntroduceImageWrapper>
 
@@ -154,29 +184,47 @@ const Introduce = () => {
                           
                     {
                         isShowInfo ?
-                        <div>
-                            <div>
-                                {item.title}
-                            </div>
-                            <div>
-                                옵션 : {option}
-                            </div>
-                            <div>
-                                {count}개
-                            </div>
-                            <div>
-                                TOTAL : {item.price * count}원
-                            </div>
+                        <>
+                            <CheckInfoWrapper>
+                                <CheckInfoTitle>
+                                    {item.title}
+                                </CheckInfoTitle>
+                                <CheckInfoOption>
+                                    옵션 : {option}
+                                </CheckInfoOption>
+                                <CheckInfoCount>
+                                    개수 : {count}개
+                                </CheckInfoCount>
+                                <CheckInfoTotalPrice>
+                                    TOTAL : {item.price * count}원
+                                </CheckInfoTotalPrice>
+                                
+                            </CheckInfoWrapper>
+
+                            <Divider style={dividerStyle}/>
                             
-                        </div>
-                        : <Notice>최소주문수량 1개 이상</Notice>
+                            <ButtonWrapper>
+                                <Button style={buyStyle} block>BUY</Button>
+                                <Button block>CART</Button>
+                            </ButtonWrapper>
+                        </>
+                        :
+                        <> 
+                            <Notice>최소주문수량 1개 이상</Notice>
+                            <Divider style={dividerStyle}/>
+                        </>
+
                     }
-                    
-                    <Divider style={dividerStyle}/>
+                
+
+
                 </Form>
             </IntroduceOptionWrapper>
-
+            
         </IntroduceWrapper>
+
+        <IntroduceDetailReview detail={TGLimg[0].detail} review={TGLimg[0].reviews}/>
+        </>
     )
 }
 
@@ -185,24 +233,63 @@ const dividerStyle = {
     width: "100%",
 }
 
+const buyStyle = {
+    marginRight : "20px",
+}
+
+const ButtonWrapper = styled.div`
+    display:flex;
+    padding: 20px 0px;
+`
+
+const CheckInfoWrapper = styled.div`
+    padding : 0px 20px;
+`
+
+const CheckInfoTitle = styled.div`
+    font-size:15px;
+    font-weight:bold;
+    margin-bottom:5px;
+`
+
+const CheckInfoOption = styled.div`
+    font-size:12px;
+    color:darkgray;
+    font-weight:bold;
+    margin-bottom:5px;
+`
+
+const CheckInfoCount = styled.div`
+    font-size:12px;
+    color:darkgray;
+    font-weight:bold;
+    margin-bottom:15px;
+`
+
+const CheckInfoTotalPrice = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-weight: bold;
+    color: darkgray;
+`
+
 const IntroduceWrapper = styled.div`
     display:flex;
     padding: 50px 150px; 
-    background-color:#ECECEC;
-    justify-content:space-around;
+    justify-content:center;
     
 `
 
 const IntroduceImageWrapper = styled.div`
     width:400px;
     height: 500px;
-    background-color:red;
+    margin-right:20px;
 `
 
 const IntroduceImage = styled.img`
     width:100%;
-    height: 80%;
-    background-color:blue;
+    height: 100%;
 `
 
 const IntroduceImageMoreWrapper = styled.div`
@@ -223,10 +310,9 @@ const IntroduceImageMore = styled.img`
 const IntroduceOptionWrapper = styled.div`
     width:400px;
     height: 500px;
-    background-color:beige;
     display:flex;
     flex-direction:column;
-    padding : 15px 30px;
+    padding : 0px 30px;
 `
 const Title = styled.div`
     font-size:15px;
