@@ -12,7 +12,6 @@ import product6 from '../img/product6.jpg'
 import product7 from '../img/product7.jpg'
 import IntroduceDetailReview from '../components/IntroduceComponents/IntroduceDetailReview'
 
-
 const TGLimg=[
     {
         id : 1,
@@ -41,7 +40,136 @@ const TGLimg=[
                 title:"제목",
                 writer:'hamy',
                 thumbnail:product1,
-            }
+                 content:"hihihihihihihi",
+            },
+            {
+                no:2,
+                title:"제목",
+                writer:'hamy',
+                 content:"hihihihihihihi",
+                
+            },
+            {
+                no:3,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:4,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:5,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:6,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:7,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:8,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:9,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                 content:"hihihihihihihi",
+            },
+            {
+                no:10,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            },
+            {
+                no:11,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            },
+            {
+                no:12,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            },
+            {
+                no:13,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            },
+            {
+                no:14,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                content:"hihihihihihihi",
+            },
+            {
+                no:15,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            },
+            {
+                no:16,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+            },
+            {
+                no:17,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                content:"hihihihihihihihi",
+            },
+            {
+                no:18,
+                title:"제목",
+                writer:'hamy',
+                content:"hihihihihihihihi",
+                
+            },
+            {
+                no:19,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                content:"hihihihihihihihi",
+            },
+            {
+                no:20,
+                title:"제목",
+                writer:'hamy',
+                thumbnail:product1,
+                content:"hihihihihihihihi",
+            },
+
         ]
 
     },
@@ -69,7 +197,7 @@ const Introduce = () => {
     const router = useRouter()
     const {id} = router.query
     const {Option} = Select
-    const [selectCounter,setSelectCounter] = useState(0)
+    const [selectCounter,setSelectCounter ]= useState(0)
     const [count,setCount] = useState(0)
     const [option,setOption] = useState("")
     const [optionList,setOptionList] = useState([])
@@ -80,6 +208,7 @@ const Introduce = () => {
             return true
         }
     }))
+
     useEffect(()=>{
         setSelectCounter(document.getElementsByClassName("select").length)
         setOptionList(Array(document.getElementsByClassName("select").length).fill(false))
@@ -112,7 +241,6 @@ const Introduce = () => {
         else setIsShowInfo(false)
     }
 
-    console.log(count)
     return (
         <>
         <IntroduceWrapper>
@@ -223,7 +351,7 @@ const Introduce = () => {
             
         </IntroduceWrapper>
 
-        <IntroduceDetailReview detail={TGLimg[0].detail} review={TGLimg[0].reviews}/>
+        <IntroduceDetailReview detail={TGLimg[0].detail} review={TGLimg[0].reviews }/>
         </>
     )
 }
